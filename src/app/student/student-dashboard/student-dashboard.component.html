@@ -1,0 +1,53 @@
+<header class="header">
+    <div class="header-content">
+      <!-- Logo ou titre de l'application -->
+      <div class="logo">
+        <h1>My Quiz App</h1>
+      </div>
+  
+      <!-- Menu de profil à droite -->
+      <div nz-dropdown [nzDropdownMenu]="menu" class="profile-menu">
+        <button nz-button nzType="text">
+          <i nz-icon nzType="user" nzTheme="outline"></i>
+          <span>{{ username }}</span>
+          <i nz-icon nzType="down"></i>
+        </button>
+      </div>
+  
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item (click)="goToPastQuizzes()">
+            <i nz-icon nzType="history" nzTheme="outline"></i>
+            List of past quizzes
+          </li>
+          <li nz-menu-item (click)="logout()">
+            <i nz-icon nzType="logout" nzTheme="outline"></i>
+            Logout
+          </li>
+        </ul>
+      </nz-dropdown-menu>
+    </div>
+  </header>  
+  
+<div class="dashboard-container">
+    <h2>Hi {{ username }} ! Let's start your learning journey. 🚀</h2>
+    <h1 class="dashboard-title">Available Quizzes</h1>
+  
+    <div class="quiz-card-container">
+      <!-- Exemple de Card pour un quiz -->
+      <div class="quiz-card" *ngFor="let quiz of quizzes">
+        <div class="quiz-card-content">
+          <h2 class="quiz-title">{{ quiz.title }}</h2>
+          <p class="quiz-description">{{ quiz.description }}</p>
+          <div class="quiz-meta">
+            <span class="quiz-duration">Duration: {{ quiz.duration }} min</span>
+            <span class="quiz-questions">{{ quiz.questionsCount }} questions</span>
+          </div>
+        </div>
+        <div class="quiz-card-actions">
+          <button nz-button nzType="primary" nzBlock (click)="startQuiz(quiz.id)">Start Quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

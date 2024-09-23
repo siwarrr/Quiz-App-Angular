@@ -1,0 +1,113 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f2f5;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo h1 {
+  margin: 0;
+  color: #1890ff;
+}
+
+.profile-menu {
+  display: flex;
+  background-color: #ffffff;
+  align-items: center;
+}
+
+.profile-menu button {
+  display: flex;
+  align-items: center;
+}
+
+.nz-dropdown-menu {
+  min-width: 150px;
+}
+
+.nz-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nz-menu-item i {
+  margin-right: 10px;
+}  
+
+/* Overall padding for step content */
+.step-content {
+  padding: 24px;
+  min-height: 200px;
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal width customization */
+nz-modal {
+  width: 700px;
+}
+
+/* Form item margins */
+.nz-form-item {
+  margin-bottom: 24px;
+}
+
+/* Styling the list of quizzes */
+.nz-list-item-meta {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nz-list-item-meta-title a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1890ff;
+}
+
+.nz-list-item-meta-title a:hover {
+  text-decoration: underline;
+}
+
+.nz-list-item-meta-description {
+  font-size: 14px;
+  color: #8c8c8c;
+}
+
+button[nz-button] {
+  border-radius: 4px;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+/* Adjust button spacing */
+button[nz-button].refresh-button {
+  margin-left: 16px;
+}
+
+/* Quiz avatar icon */
+.nz-list-item-meta-avatar img {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+.nz-list-empty {
+  text-align: center;
+  padding: 24px;
+  font-size: 16px;
+  color: #8c8c8c;
+}

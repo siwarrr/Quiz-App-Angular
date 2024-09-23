@@ -1,0 +1,132 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f2f5;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .logo h1 {
+    margin: 0;
+    color: #1890ff;
+  }
+  
+  .profile-menu {
+    display: flex;
+    background-color: #ffffff;
+    align-items: center;
+  }
+  
+  .profile-menu button {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nz-dropdown-menu {
+    min-width: 150px;
+  }
+  
+  .nz-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .nz-menu-item i {
+    margin-right: 10px;
+  }  
+  
+
+/* Conteneur principal */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+  }
+  
+  /* Titre du dashboard */
+  .dashboard-title {
+    font-size: 2.5rem;
+    color: #1890ff;
+    margin-bottom: 30px;
+  }
+  
+  /* Conteneur des cards de quiz */
+  .quiz-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Style pour chaque card de quiz */
+  .quiz-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Animation au survol */
+  .quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Contenu de la card */
+  .quiz-card-content {
+    padding: 20px;
+  }
+  
+  /* Titre du quiz */
+  .quiz-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  /* Description du quiz */
+  .quiz-description {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 15px;
+  }
+  
+  /* Informations supplémentaires sur le quiz */
+  .quiz-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #888888;
+  }
+  
+  /* Section d'actions de la card */
+  .quiz-card-actions {
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .quiz-card-actions button {
+    width: 100%;
+  }
+  

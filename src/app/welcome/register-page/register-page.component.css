@@ -1,0 +1,90 @@
+/* HTML et Body doivent prendre toute la hauteur pour permettre le centrage */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Utiliser Flexbox sur un conteneur global pour centrer */
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    background-color: #f0f2f5; /* Fond clair pour contraste */
+}
+
+/* Conteneur principal pour la page de registre */
+.register-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: auto; /* Utiliser les marges auto pour centrer le conteneur */
+}
+
+/* Section du formulaire */
+.form-section {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Formulaire */
+.register-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Utilisation de Flexbox pour espacer les labels et les inputs */
+.nz-form-item {
+    display: flex;
+    margin-right: 30px;
+    align-items: center; /* Aligne verticalement les labels et les inputs */
+    margin-bottom: 20px; /* Espacement entre chaque élément de formulaire */
+}
+
+.nz-form-label {
+    margin-right: 30px; /* Ajuste cet espace pour plus ou moins d'espacement */
+    flex: 0 0 120px; /* Fixe la largeur des labels pour un alignement uniforme */
+    text-align: right; /* Aligne le texte du label à droite pour un meilleur visuel */
+}
+
+.nz-form-control {
+    flex: 1; /* Permet à l'input de prendre l'espace restant */
+    margin-left: 30px;
+}
+
+/* Boutons radio alignés horizontalement */
+.nz-radio-group {
+    display: flex;
+    gap: 10px; /* Espacement entre les boutons radio */
+    align-items: center; /* Aligne les boutons radio verticalement */
+}
+
+/* Bouton de soumission */
+.register-form-button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Section de l'image */
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.rocket-image {
+    max-width: 80%;
+    height: auto;
+    display: block;
+}

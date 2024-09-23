@@ -1,0 +1,14 @@
+/* Conteneur pour centrer les boutons */
+.center-buttons {
+    display: flex;              /* Utilisation de Flexbox pour aligner les éléments */
+    justify-content: center;    /* Centre les boutons horizontalement */
+    align-items: center;        /* Centre les boutons verticalement */
+    height: 100vh;              /* Prend toute la hauteur de la vue pour centrer verticalement */
+  }
+  
+  /* Style pour les boutons */
+  .center-buttons button {
+    width: 150px;               /* Augmente la largeur des boutons */
+    margin: 0 10px;             /* Ajoute une marge de 10px entre les boutons */
+  }
+  

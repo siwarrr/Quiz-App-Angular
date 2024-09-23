@@ -1,0 +1,60 @@
+<div class="main-wrapper">
+    <div class="register-container">
+      <div class="form-section">
+        <form nz-form [nzAutoTips]="autoTips" [formGroup]="validateForm" class="register-form" (ngSubmit)="submitForm()">
+          <nz-form-item>
+            <nz-form-label [nzSpan]="7" nzRequired>Username</nz-form-label>
+            <nz-form-control [nzSpan]="12" nzValidatingTip="Validating...">
+              <input nz-input formControlName="username" placeholder="enter your username" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
+            <nz-form-control [nzSpan]="12">
+              <input nz-input formControlName="email" placeholder="email" type="email" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="7" nzRequired>Register as</nz-form-label>
+            <nz-form-control [nzOffset]="2" [nzSpan]="12">
+              <nz-radio-group [(ngModel)]="radioValue" formControlName="radioValue">
+                <label nz-radio nzValue="Student">Student</label>
+                <label nz-radio nzValue="Instructor">Instructor</label>
+              </nz-radio-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="7" nzRequired>Password</nz-form-label>
+            <nz-form-control [nzSpan]="12" nzDisableAutoTips nzErrorTip="Please input your password!">
+              <input nz-input type="password" formControlName="password" (ngModelChange)="validateConfirmPassword()" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="7" nzRequired>Confirm Password</nz-form-label>
+            <nz-form-control [nzSpan]="12" nzDisableAutoTips [nzErrorTip]="passwordErrorTpl">
+              <input nz-input type="password" formControlName="confirm" placeholder="confirm your password" />
+              <ng-template #passwordErrorTpl let-control>
+                <span *ngIf="control.errors?.['required']">
+                  Please confirm your password!
+                </span>
+                <span *ngIf="control.errors?.['confirm']">
+                  Password is inconsistent!
+                </span>
+              </ng-template>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control [nzOffset]="7" [nzSpan]="12" class="register-form-button">
+              <button nz-button nzType="primary" (click)="register()">Register</button>
+            </nz-form-control>
+          </nz-form-item>
+          Or
+          <a routerLink="/welcome/login">login now!</a>
+        </form>
+      </div>
+      <div class="image-section">
+        <img src="assets/fusée.jpg" alt="Rocket Image" class="rocket-image">
+      </div>
+    </div>
+  </div>
+  

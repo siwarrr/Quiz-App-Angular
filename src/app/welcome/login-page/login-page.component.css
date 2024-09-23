@@ -1,0 +1,63 @@
+/* HTML et Body doivent prendre toute la hauteur pour permettre le centrage */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Utiliser Flexbox sur un conteneur global pour centrer */
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    background-color: #f0f2f5; /* Fond clair pour contraste */
+}
+
+/* Conteneur principal pour la page de login */
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: auto; /* Utiliser les marges auto pour centrer le conteneur */
+}  
+  /* Section du formulaire */
+  .form-section {
+    flex: 1;
+    padding: 20px;
+  }
+  
+.login-form {
+    max-width: 300px;
+  }
+
+  .login-form-margin {
+    margin-bottom: 16px;
+  }
+
+  .login-form-forgot {
+    float: right;
+  }
+
+  .login-form-button {
+    width: 100%;
+  }
+
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .rocket-image {
+    max-width: 80%;
+    height: auto;
+    display: block;
+  }
