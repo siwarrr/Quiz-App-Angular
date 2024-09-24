@@ -110,13 +110,23 @@
     margin-bottom: 15px;
   }
   
-  /* Informations supplémentaires sur le quiz */
-  .quiz-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9rem;
-    color: #888888;
-  }
+/* Informations supplémentaires sur le quiz */
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alignement vertical */
+  font-size: 0.9rem;
+  color: #888888;
+  margin-top: 10px;
+  width: 100%; /* S'assurer que les éléments occupent toute la largeur disponible */
+}
+
+/* Forcer les éléments à ne pas prendre plus d'espace que nécessaire */
+.quiz-meta span {
+  flex-shrink: 0; /* Empêcher les éléments de rétrécir */
+  margin: 0;
+}
+
   
   /* Section d'actions de la card */
   .quiz-card-actions {

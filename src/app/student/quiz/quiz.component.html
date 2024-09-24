@@ -1,0 +1,47 @@
+<div *ngIf="selectedQuiz">
+    <h1>{{ selectedQuiz.title }}</h1>
+    <div *ngIf="currentQuestionIndex < selectedQuiz.questions.length">
+      <p><strong>Question {{ currentQuestionIndex + 1 }}: {{ selectedQuiz.questions[currentQuestionIndex].question }}</strong></p>
+  
+      <!-- Afficher les options pour les types 'single choice' -->
+      <div *ngIf="selectedQuiz.questions[currentQuestionIndex].type === 'single choice'">
+        <label *ngFor="let option of selectedQuiz.questions[currentQuestionIndex].options">
+          <input type="radio" [(ngModel)]="selectedAnswers[currentQuestionIndex]" [value]="option.label || option">
+          {{ option.label || option }}
+        </label>
+      </div>
+  
+      <!-- Afficher les options pour les types 'multiple choice' -->
+      <div *ngIf="selectedQuiz.questions[currentQuestionIndex].type === 'multiple choice'">
+        <label *ngFor="let option of selectedQuiz.questions[currentQuestionIndex].options">
+          <input type="checkbox" [(ngModel)]="selectedAnswers[currentQuestionIndex]" [value]="option.label || option">
+          {{ option.label || option }}
+        </label>
+      </div>
+  
+      <!-- Afficher les options pour les types 'true/false' -->
+      <div *ngIf="selectedQuiz.questions[currentQuestionIndex].type === 'true/false'">
+        <label>
+          <input type="radio" [(ngModel)]="selectedAnswers[currentQuestionIndex]" value="true"> True
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="selectedAnswers[currentQuestionIndex]" value="false"> False
+        </label>
+      </div>
+  
+      <!-- Afficher un champ texte pour les types 'short answer' -->
+      <div *ngIf="selectedQuiz.questions[currentQuestionIndex].type === 'short answer'">
+        <label>
+          <input type="text" [(ngModel)]="selectedAnswers[currentQuestionIndex]" placeholder="Enter your answer">
+        </label>
+      </div>
+  
+      <!-- Ajouter un bouton pour passer à la question suivante -->
+      <button nz-button nzType="primary" (click)="nextQuestion()">Next</button>
+    </div>
+    <div *ngIf="currentQuestionIndex >= selectedQuiz.questions.length">
+      <h2>Quiz terminé!</h2>
+      <button nz-button nzType="primary" (click)="finishQuiz()">Submit</button>
+    </div>
+  </div>
+  

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { AuthService } from 'src/app/services/auth.service';
+import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
   selector: 'app-student-dashboard',
@@ -10,31 +12,15 @@ import { AuthService } from 'src/app/services/auth.service';
 export class StudentDashboardComponent implements OnInit{
 
   username: string = '';
-
-  quizzes = [
-    {
-      id: 1,
-      title: 'Math Quiz',
-      description: 'Test your math skills with this basic arithmetic quiz.',
-      duration: 30,
-      questionsCount: 10,
-    },
-    {
-      id: 2,
-      title: 'Science Quiz',
-      description: 'Explore the wonders of science with this challenging quiz.',
-      duration: 45,
-      questionsCount: 15,
-    },
-    {
-      id: 3,
-      title: 'History Quiz',
-      description: 'A fun quiz to test your knowledge of historical events.',
-      duration: 20,
-      questionsCount: 8,
-    }
-  ];
+  quizzes: any[] = [];
+  selectedQuiz: any = null;
+  quizId: string = '' ;
+  currentQuestionIndex: number = 0;
+  selectedAnswers: any = {};
+  
   constructor(private authService: AuthService,
+              private quizService: QuizService,
+              private modal: NzModalService,
               private router: Router
   ) {}
 
@@ -47,13 +33,21 @@ export class StudentDashboardComponent implements OnInit{
         console.error('Error fetching username:', error);
       }
     );
+
+    // Récupérer la liste des quizzes disponibles
+    this.quizService.getQuizzes().subscribe(
+      (data) => {
+        this.quizzes = data; // Stocker les quizzes dans la variable
+      },
+      (error) => {
+        console.error('Error fetching quizzes:', error);
+      }
+    );
   }
 
-  startQuiz(quizId: number): void {
-    console.log('Starting quiz with ID:', quizId);
-    // Logique pour démarrer le quiz ou rediriger l'étudiant vers la page du quiz
+  startQuiz(quizId: string): void {
+    this.router.navigate([`student/quiz/${quizId}`]);  // Naviguer vers le composant QuizComponent avec l'ID du quiz
   }
-
     // Naviguer vers les quiz passés
     goToPastQuizzes() {
       this.router.navigate(['/past-quizzes']);
@@ -62,6 +56,6 @@ export class StudentDashboardComponent implements OnInit{
     // Déconnecter l'utilisateur
     logout() {
       //this.authService.logout();
-      this.router.navigate(['/login']);
+      this.router.navigate(['welcome/login']);
     }
 }

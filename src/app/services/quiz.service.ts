@@ -73,4 +73,10 @@ export class QuizService {
     const headers = this.getAuthHeaders();
     return this.http.get(`${this.apiUrl}/quiz/${quizId}/results`, { headers });
   }
+
+  // Récupérer tous les quizzes disponibles
+  getQuizzes(): Observable<any> {
+    const headers = this.getAuthHeaders();
+    return this.http.get(`${this.apiUrl}/available`, { headers });
+  }
 }
