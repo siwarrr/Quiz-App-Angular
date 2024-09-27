@@ -1,0 +1,51 @@
+/* Centrer le conteneur principal du quiz */
+.quiz-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* S'étend sur toute la hauteur de l'écran */
+    text-align: center;
+  }
+  
+  .quiz-content {
+    width: 80%; /* Ajuster la largeur selon les besoins */
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Style pour les détails du quiz après la fin */
+  .quiz-details {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .quiz-details p {
+    margin: 10px 0;
+  }
+  
+  .quiz-details ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .quiz-details ul li {
+    margin: 5px 0;
+  }
+  
+  /* Boutons de navigation */
+  button[nz-button] {
+    margin-top: 20px;
+  }
+  
+  .incorrect-answer {
+    color: red;
+  }
+  
+  .correct-info {
+    color: green;
+  }
+  
+  
